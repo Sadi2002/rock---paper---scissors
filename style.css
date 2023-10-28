@@ -16,6 +16,7 @@ body {
   background-attachment: fixed;
   display: flex;
   justify-content: center;
+  min-height: 100vh;
 }
 
 .container {
@@ -77,6 +78,10 @@ body {
   margin-bottom: 100px;
 }
 
+.fight-box {
+  margin-bottom: 50px;
+}
+
 .bottom-side div {
   width: 115px;
   height: 115px;
@@ -111,11 +116,17 @@ body {
   transform: translate(-50%, -50%);
   box-shadow: inset 0px 7px 0px -1px rgba(0, 0, 0, 0.2);
 }
-.bottom-side div.paper {
+.bottom-side div.paper,
+.fight-box div.paper {
   background-color: rgb(67, 134, 202);
 }
-.bottom-side div.rock {
+.bottom-side div.rock,
+.fight-box div.rock {
   background-color: rgb(226, 183, 55);
+}
+
+.fight-box div.scissors {
+  background-color: rgb(220, 86, 86);
 }
 
 .triangle {
@@ -196,6 +207,92 @@ body {
   letter-spacing: 1px;
 }
 
+.fight div {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.fight {
+  display: flex;
+  gap: 30px;
+}
+
+.fight-box .fight div div {
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  box-shadow: inset 0px -7px 0px -1px rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fight-box .fight div div::after {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: -1;
+  box-shadow: inset 0px 7px 0px -1px rgba(0, 0, 0, 0.2);
+}
+
+.fight-text {
+  max-width: 100px;
+  min-height: 40px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.result-box {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.result {
+  font-size: 43px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #fff;
+  text-align: center;
+  margin-top: 50px;
+  white-space: nowrap;
+  margin-bottom: 20px;
+}
+
+.play-again {
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  background-color: #fff;
+  color: hsl(229, 25%, 31%);
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.count {
+  font-size: 120px;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .close {
   padding: 20px;
   cursor: pointer;
@@ -204,6 +301,10 @@ body {
 .hide {
   opacity: 0;
   visibility: hidden;
+}
+
+.none {
+  display: none;
 }
 
 /* Media */
@@ -259,6 +360,24 @@ body {
   .bottom-side div::after {
     width: 120px;
     height: 120px;
+  }
+  .result {
+    font-size: 55px;
+  }
+}
+
+@media (700px <= width) {
+  .fight-box .fight div div {
+    width: 200px;
+    height: 200px;
+  }
+  .fight-box .fight div div::after {
+    width: 150px;
+    height: 150px;
+  }
+
+  .fight-box .fight div div img {
+    width: 70px;
   }
 }
 
@@ -321,12 +440,27 @@ body {
   .overlay {
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 5;
     transition: all 0.5s;
+  }
+
+  .fight {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .result-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .play-again {
+    width: 40%;
   }
 }
 
@@ -356,5 +490,8 @@ body {
 
   .container {
     padding-top: 20px;
+  }
+  .triangle {
+    width: 400px;
   }
 }
