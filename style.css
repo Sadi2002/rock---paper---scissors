@@ -32,6 +32,7 @@ body {
   align-items: center;
   height: 90px;
   padding: 8px 8px 8px 20px;
+  margin-bottom: 100px;
 }
 
 .title p {
@@ -66,6 +67,98 @@ body {
   font-weight: bold;
 }
 
+.bottom-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.bottom-side div {
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  background-color: rgb(220, 86, 86);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: inset 0px -7px 0px -1px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.bottom-side div img {
+  color: hsl(229, 25%, 31%);
+  z-index: 1;
+}
+.bottom-side div::after {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: #fff;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: inset 0px 7px 0px -1px rgba(0, 0, 0, 0.2);
+}
+.bottom-side div.paper {
+  background-color: rgb(67, 134, 202);
+}
+.bottom-side div.rock {
+  background-color: rgb(226, 183, 55);
+}
+
+.triangle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  z-index: -1;
+}
+
+.rules-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.rules {
+  width: 120px;
+  height: 40px;
+  background: none;
+  border: 3px solid hsl(217, 16%, 45%);
+  border-radius: 7px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+@media (350px <= width) {
+  .bottom-side div {
+    width: 130px;
+    height: 130px;
+  }
+  .bottom-side div::after {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (500px <= width) {
+  .bottom-side {
+    margin: 0 auto 100px;
+    width: 400px;
+  }
+}
+
 @media (576px < width) {
   .top-side {
     height: 100px;
@@ -90,6 +183,15 @@ body {
 
   .container {
     max-width: 700px;
+  }
+
+  .bottom-side div {
+    width: 160px;
+    height: 160px;
+  }
+  .bottom-side div::after {
+    width: 120px;
+    height: 120px;
   }
 }
 
@@ -119,5 +221,24 @@ body {
   .score {
     font-size: 70px;
     line-height: 70px;
+  }
+
+  .bottom-side div {
+    width: 200px;
+    height: 200px;
+  }
+  .bottom-side div::after {
+    width: 140px;
+    height: 140px;
+  }
+
+  .bottom-side {
+    width: 500px;
+    gap: 60px;
+  }
+  .rules {
+    width: 150px;
+    height: 60px;
+    font-size: 18px;
   }
 }
