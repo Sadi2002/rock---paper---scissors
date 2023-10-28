@@ -129,6 +129,19 @@ body {
   background-color: rgb(220, 86, 86);
 }
 
+.pap {
+  background-color: rgb(67, 134, 202) !important;
+}
+.rk {
+  background-color: rgb(226, 183, 55) !important;
+}
+.sci {
+  background-color: rgb(220, 86, 86) !important;
+}
+.computer {
+  background-color: #e571af !important;
+}
+
 .triangle {
   position: absolute;
   top: 50%;
@@ -227,7 +240,6 @@ body {
   border-radius: 50%;
   position: relative;
   z-index: 1;
-  box-shadow: inset 0px -7px 0px -1px rgba(0, 0, 0, 0.4);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -291,6 +303,16 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.bottom-side div img {
+  pointer-events: none;
 }
 
 .close {
