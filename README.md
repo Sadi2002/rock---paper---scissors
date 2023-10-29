@@ -1,5 +1,5 @@
 # Frontend Mentor - Rock, Paper, Scissors
-live demo - https://sadi2002.github.io/rock---paper---scissors/
+live demo - https://kamienpapiernozycefun.netlify.app
 
 ![Design preview for the Rock, Paper, Scissors coding challenge](./design/desktop-preview.jpg)
 
