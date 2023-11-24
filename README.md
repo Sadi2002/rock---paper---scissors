@@ -1,5 +1,5 @@
 # Frontend Mentor - Rock, Paper, Scissors
-live demo - https://papierkamiennozyczefun.netlify.app
+live demo - https://papierkamiennozycefun.netlify.app
 
 ![Design preview for the Rock, Paper, Scissors coding challenge](./design/desktop-preview.jpg)
 
